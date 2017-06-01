@@ -1,0 +1,29 @@
+{
+  "name": "express-handlebars-week",
+  "version": "1.0.0",
+  "description": "Resource Share App",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akin909/express-handlebars-week.git"
+  },
+  "keywords": [
+    "Express"
+  ],
+  "author": "Founders & Coders",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Akin909/express-handlebars-week/issues"
+  },
+  "homepage": "https://github.com/Akin909/express-handlebars-week#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

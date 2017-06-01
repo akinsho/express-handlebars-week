@@ -31,11 +31,12 @@ Follow the steps outlined below and you will learn the following:
 <!-- ****************************************************** -->
 ## Workshop 1 - Setup an Express server
 
-### Step 1 - Setup an express server (code along)
+### Step 1 - Setup a basic [express server (code along)](https://expressjs.com/en/starter/hello-world.html)
 
 1. Fork this repository
 1. Clone your forked repository `git clone [link to your repo here]`
-1. Open `server.js` and let's set up a server.
+1. Install all dependencies `npm install`
+1. Open `server.js` and let's set up a server
 1. Install express `npm install express`
 
 ### `/src/server.js`
@@ -47,7 +48,8 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3001;
 ```
-2. Create a handler for the home route and send the response, finally, set
+
+1. Create a handler for the home route and send the response, finally, set
    server to listen for connections on the port
 
 ``` javascript
@@ -60,9 +62,38 @@ app.listen(port, () => {
 });
 ```
 
-### Step 2 - Serve static assets using (code along)
+### Step 2 - Serve static assets using [static middleware](https://expressjs.com/en/starter/static-files.html) (code along)
 
+### `/src/server.js`
+1. Use static middleware. Express has `static` method which can be used to serve static assets (e.g. html, css, js). Replace `app.get()` with `app.use()`.
 
+``` javascript
+app.use(express.static(path.join(__dirname, '..', 'public')));
+```
+
+### Step 3 - Handle different [routes] (https://expressjs.com/en/guide/routing.html) (code along)
+
+1. Create handlers for individual routes
+### `/src/server.js`
+
+``` javascript
+app.get('/favourites', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public', 'favourites.html'));
+});
+
+app.get('/add', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public', 'add.html'));
+});
+```
+
+1. Replace the above with one handler for all routes
+### `/src/server.js`
+
+``` javascript
+app.get('/:slug', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public', `${req.params.slug}.html`));
+});
+```
 
 <!-- ****************************************************** -->
 ## Workshop 2 - Animated app drawer
