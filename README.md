@@ -36,6 +36,29 @@ Follow the steps outlined below and you will learn the following:
 1. Fork this repository
 1. Clone your forked repository `git clone [link to your repo here]`
 1. Open `server.js` and let's set up a server.
+1. Install express `npm install express`
+
+### `/src/server.js`
+1. Require express and instantiate the app server and create a port variable
+
+``` javascript
+const express = require('express');
+
+const app = express();
+const port = process.env.PORT || 3001;
+```
+2. Create a handler for the home route and send the response, finally, set
+   server to listen for connections on the port
+
+``` javascript
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
+
+app.listen(port, () => {
+  console.log(`It all begins... on ${port}`);
+});
+```
 
 ### Step 2 - Serve static assets using (code along)
 
