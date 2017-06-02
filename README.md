@@ -105,8 +105,31 @@ app.get('/:slug', (req, res) => {
 
 <!-- ****************************************************** -->
 ## Workshop 3 - [Templating with Handlebars](https://expressjs.com/en/guide/using-template-engines.html)
+1. Step 1
 
+``` javascript
+app.get('/', (req, res) => {
+    res.render('index', { route: 'Home' });
+    });
 
+app.get('/favourites', (req, res) => {
+    res.render('index', { route: 'favourites' });
+    });
+
+app.get('/add', (req, res) => {
+    res.render('index', { route: 'add' });
+    });
+```
+
+1. Change the route to an express dynamic parameter to render views based on
+   links which should match our templates.
+
+``` javascript
+app.get('/:route', (req, res) => {
+  res.render('index', { route: req.params.route });
+});
+
+```
 
 
 ### Step 1 - ...(code along)

@@ -11,17 +11,17 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.get('/', (req, res) => {
-  res.render('index', { route: 'Home' });
+app.get('/:route', (req, res) => {
+  res.render('index', { route: req.params.route });
 });
 
-app.get('/favourites', (req, res) => {
-  res.render('index', { route: 'favourites' });
-});
+//app.get('/favourites', (req, res) => {
+//res.render('index', { route: 'favourites' });
+//});
 
-app.get('/add', (req, res) => {
-  res.render('index', { route: 'add' });
-});
+//app.get('/add', (req, res) => {
+//res.render('index', { route: 'add' });
+//});
 
 app.listen(port, () => {
   console.log(`It all begins... on ${port}`);
