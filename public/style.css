@@ -42,6 +42,10 @@ ul {
   color: white;
 }
 
+.nav__link--active {
+    text-decoration: underline;
+}
+
 .articles {
   display: flex;
   flex-direction: column;
