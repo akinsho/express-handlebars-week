@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/Akin909/express-handlebars-week#readme",
   "dependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "hbs": "^4.0.1"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"

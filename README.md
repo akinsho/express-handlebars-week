@@ -68,6 +68,9 @@ app.listen(port, () => {
 1. Use static middleware. Express has `static` method which can be used to serve static assets (e.g. html, css, js). Replace `app.get()` with `app.use()`.
 
 ``` javascript
+// Add path dependency
+const path = require('path');
+
 app.use(express.static(path.join(__dirname, '..', 'public')));
 ```
 
@@ -101,7 +104,10 @@ app.get('/:slug', (req, res) => {
 ### Step 1 - ...(code along)
 
 <!-- ****************************************************** -->
-## Workshop 3 - Templating with Handlebars
+## Workshop 3 - [Templating with Handlebars](https://expressjs.com/en/guide/using-template-engines.html)
+
+
+
 
 ### Step 1 - ...(code along)
 
